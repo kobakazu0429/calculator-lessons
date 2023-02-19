@@ -18,4 +18,4 @@
 
 ## サンプル
 
-https://kobakazu0429.github.io/calculator-lessons/
+- [00\_完成形](https://kobakazu0429.github.io/calculator-lessons/00_完成形)
