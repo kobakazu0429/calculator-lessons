@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>00_完成形</title>
     <style>
-      input, button {
+      input,
+      button {
         font-size: 20px;
       }
 
@@ -33,6 +34,7 @@
     <div class="calculator">
       <input class="result" />
       <input readonly class="formula" />
+
       <button disabled></button>
       <button disabled></button>
       <button>BS</button>
@@ -65,12 +67,12 @@
       const updateResult = (value) => {
         const resultElement = document.querySelector(".result");
         resultElement.value = value;
-      }
+      };
 
       const flush = () => {
         const formulaElement = document.querySelector(".formula");
         formulaElement.value = formula.join(" ");
-      }
+      };
 
       const calculate = () => {
         let value1 = formula[0];
@@ -78,14 +80,14 @@
           const operator = formula[i];
           const value2 = formula[i + 1];
 
-          if      (operator === "+") value1 = value1 + value2;
+          if (operator === "+") value1 = value1 + value2;
           else if (operator === "-") value1 = value1 - value2;
           else if (operator === "*") value1 = value1 * value2;
           else if (operator === "/") value1 = value1 / value2;
         }
 
-        updateResult(value1)
-      }
+        updateResult(value1);
+      };
 
       document.querySelectorAll("button").forEach((button) => {
         button.addEventListener("click", () => {
@@ -103,7 +105,11 @@
               break;
 
             default:
-              formula.push(Number.isNaN(parseInt(button.textContent, 10)) ? button.textContent : parseInt(button.textContent, 10));
+              formula.push(
+                Number.isNaN(parseInt(button.textContent, 10))
+                  ? button.textContent
+                  : parseInt(button.textContent, 10)
+              );
               break;
           }
 
